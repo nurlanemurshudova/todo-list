@@ -1,10 +1,10 @@
-document.querySelector('.push').onclick = function(e){
+document.querySelector('.push').onclick = function (e) {
     e.preventDefault();
-    if(document.querySelector('input').value.length == 0){
+    if (document.querySelector('input').value.length == 0) {
         alert("Siyahiya metn elave et!")
     }
 
-    else{
+    else {
         document.querySelector('.tasks').innerHTML += `
             <div class="task">
                     ${document.querySelector('input').value}
@@ -13,10 +13,12 @@ document.querySelector('.push').onclick = function(e){
         `;
 
         let delete_btn = document.querySelectorAll(".delete");
-        for(let i=0; i<delete_btn.length; i++){
-            delete_btn[i].onclick = function(){
+        for (let i = 0; i < delete_btn.length; i++) {
+            delete_btn[i].onclick = function () {
                 this.parentNode.remove();
             }
         }
+        const listInput = document.querySelector('.list-input');
+        listInput.value = '';
     }
 }
